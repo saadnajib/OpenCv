@@ -5,6 +5,8 @@ import numpy as np
 img = cv.imread('p/3.jpg')
 cv.imshow('cat',img)
 
+################################################### Contours through Canny Filter 
+
 canny = cv.Canny(img,125,125)
 
 cv.imshow('canny',canny)
@@ -18,7 +20,12 @@ cv.imshow('blank',blank)
 cv.drawContours(blank,contour,-1,(0,255,0),1)
 cv.imshow('contour drawn',blank)
 
-# ret,thresh = cv.threshold(img,180,255,cv.THRESH_BINARY)
+################################################### Contours through thresholding 
+
+# gray = cv.cvtColor(img,cv.COLOR_BGR2GRAY)
+# cv.imshow('gray',gray)
+
+# ret,thresh = cv.threshold(gray,180,255,cv.THRESH_BINARY)
 # cv.imshow('thresh',thresh)
 
 # contour, herarchy = cv.findContours(thresh,cv.RETR_LIST,cv.CHAIN_APPROX_SIMPLE)
@@ -26,4 +33,5 @@ cv.imshow('contour drawn',blank)
 
 # cv.drawContours(blank,contour,-1,(0,255,0),1)
 # cv.imshow('contour drawn',blank)
+
 cv.waitKey(0)
