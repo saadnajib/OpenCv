@@ -7,7 +7,7 @@ gray = cv.cvtColor(img,cv.COLOR_BGR2GRAY)
 
 # Face detection through Harcascade
 
-face_harcascade = cv.CascadeClassifier('detection/front_face_har.xml')
+face_harcascade = cv.CascadeClassifier('front_face_har.xml')
 face_detection_cordinates = face_harcascade.detectMultiScale(gray,1.1,3)
 print(len(face_detection_cordinates))
 
@@ -20,7 +20,7 @@ for x,y,w,h in face_detection_cordinates:
 
 # eyes detection through Harcascade
 
-eye_harcascade = cv.CascadeClassifier('detection/eye_har.xml')
+eye_harcascade = cv.CascadeClassifier('eye_har.xml')
 eye_detection_cordinates = eye_harcascade.detectMultiScale(gray,1.1,3)
 print(len(eye_detection_cordinates))
 
